@@ -11,6 +11,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip successSound;
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem crashParticles;
+    bool disableCollisions = false;
 
     AudioSource audioSource;
 
@@ -20,9 +21,13 @@ public class CollisionHandler : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (isTransitioning) return;
+        if (isTransitioning || disableCollisions) return;
         switch(collision.gameObject.tag)
         {
             case "Friendly":
@@ -87,5 +92,17 @@ public class CollisionHandler : MonoBehaviour
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            disableCollisions = !disableCollisions;
+        }
     }
 }

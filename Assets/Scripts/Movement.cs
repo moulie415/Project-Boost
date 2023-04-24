@@ -9,6 +9,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +30,74 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-        } else
+            StartThrusting();
+
+        }
+        else
         {
-            audioSource.Stop();
+            StopThrusting();
         }
 
     }
 
-    void ProcessRotation() 
+    void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(rotationThrust);
+            RotateLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(-rotationThrust);
+            RotateRight();
+        }
+        else
+        {
+            StopRotating();
+        }
+    }
+
+    private void StartThrusting()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!mainBooster.isPlaying)
+        {
+            mainBooster.Play();
+        }
+    }
+
+    private void StopThrusting()
+    {
+        audioSource.Stop();
+        mainBooster.Stop();
+    }
+
+
+
+    private void StopRotating()
+    {
+        rightBooster.Stop();
+        leftBooster.Stop();
+    }
+
+    private void RotateRight()
+    {
+        ApplyRotation(-rotationThrust);
+        if (!leftBooster.isPlaying)
+        {
+            leftBooster.Play();
+        }
+    }
+
+    private void RotateLeft()
+    {
+        ApplyRotation(rotationThrust);
+        if (!rightBooster.isPlaying)
+        {
+            rightBooster.Play();
         }
     }
 
@@ -58,4 +108,6 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false; // unfreezing rotation so the physics system can take over
 
     }
+
+
 }

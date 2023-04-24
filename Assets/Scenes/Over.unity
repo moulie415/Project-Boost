@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 532155722308355752, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.26
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 532155722308355752, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -412,6 +412,18 @@ PrefabInstance:
     - target: {fileID: 532155722308355764, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512930673988435963, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991929911676592555, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594591794753564018, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
+      propertyPath: looping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd0843d3e16f8284e848ef2ff017efeb, type: 3}
