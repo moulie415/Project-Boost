@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31735920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4016753589892205982, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
+  m_PrefabInstance: {fileID: 505556351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &31735921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31735920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1978ab1bbc8d6844591a50dc971ecc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: -8, z: 0}
+  period: 5
 --- !u!1001 &505556351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,21 +149,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 255848059145094559, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
+      propertyPath: m_Range
+      value: 12.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 255848059145094559, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1450253965269202915, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1450253965269202915, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 17.259308
+      value: 8.466554
       objectReference: {fileID: 0}
     - target: {fileID: 1450253965269202915, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.29
+      value: -25.75
       objectReference: {fileID: 0}
     - target: {fileID: 1450253965269202915, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.74
+      value: 13.39
       objectReference: {fileID: 0}
     - target: {fileID: 1450253965269202915, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -217,7 +244,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.19
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

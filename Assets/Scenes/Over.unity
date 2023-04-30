@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016753589892205982, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
       propertyPath: m_Name
-      value: Obstacle
+      value: Moving obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906447571679afc4ea20be1fa794d89b, type: 3}
@@ -626,7 +626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 8, y: 0, z: 0}
-  movementFactor: 0
   period: 2
 --- !u!4 &527551852 stripped
 Transform:
